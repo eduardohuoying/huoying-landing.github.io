@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Importadora Huoying | Repuestos de Motor y Carrocería en Santiago Centro</title>
+    <meta
+        name="description"
+        content="Importadora Huoying: especialistas en repuestos de motor y carrocería. 11 años en el mercado, 3 sucursales en Santiago Centro, envíos a todo Chile, transporte propio en Santiago e importación directa desde China."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#08111f',
+                            darker: '#050b14',
+                            card: '#0f1b2e',
+                            primary: '#0ea5e9',
+                            secondary: '#38bdf8',
+                            soft: '#dff5ff',
+                            green: '#22c55e',
+                            line: 'rgba(255,255,255,0.08)',
+                        }
+                    },
+                    boxShadow: {
+                        soft: '0 12px 35px rgba(2, 8, 23, 0.38)',
+                        glow: '0 0 0 1px rgba(56,189,248,0.12), 0 20px 42px rgba(14,165,233,0.18)',
+                        green: '0 20px 45px rgba(34,197,94,0.18)',
+                    },
+                    backgroundImage: {
+                        'hero-overlay': "linear-gradient(135deg, rgba(5,11,20,.93), rgba(8,17,31,.88)), url('https://images.unsplash.com/photo-1517524206127-48bbd363f3d7?q=80&w=1800&auto=format&fit=crop')",
+                        'grid-pattern': 'radial-gradient(circle at 1px 1px, rgba(255,255,255,.07) 1px, transparent 0)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            color-scheme: dark;
+        }
+
+        body {
+            background:
+                radial-gradient(circle at top left, rgba(14,165,233,.15), transparent 28%),
+                radial-gradient(circle at 85% 12%, rgba(56,189,248,.10), transparent 22%),
+                linear-gradient(180deg, #050b14 0%, #08111f 40%, #06101d 100%);
+        }
+
+        .glass {
+            background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(255,255,255,.08);
+        }
+
+        .section-grid {
+            background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,.05) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+
+        .hero-fade::after {
+            content: '';
+            position: absolute;
+            inset: auto 0 0 0;
+            height: 180px;
+            background: linear-gradient(180deg, rgba(5,11,20,0) 0%, rgba(5,11,20,1) 100%);
+            pointer-events: none;
+        }
+
+        .shine-border {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .shine-border::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            padding: 1px;
+            border-radius: inherit;
+            background: linear-gradient(130deg, rgba(255,255,255,.18), rgba(56,189,248,.28), rgba(255,255,255,.06));
+            -webkit-mask:
+                linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity .75s ease, transform .75s ease;
+        }
+
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .floating-whatsapp {
+            animation: floatPulse 2.4s ease-in-out infinite;
+        }
+
+        @keyframes floatPulse {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-4px); }
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-200 antialiased selection:bg-brand.primary selection:text-white overflow-x-hidden">
+
+    <nav class="fixed top-0 inset-x-0 z-50 border-b border-white/10 bg-brand-dark/85 backdrop-blur-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between py-4 gap-4">
+                <a href="#inicio" class="flex items-center gap-3 min-w-0">
+                    <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-brand-primary to-cyan-300 text-brand-darker font-black text-lg grid place-items-center shadow-glow shrink-0">
+                        HY
+                    </div>
+                    <div class="min-w-0">
+                        <p class="text-white font-extrabold tracking-[0.16em] text-sm uppercase truncate">Importadora Huoying</p>
+                        <p class="text-slate-400 text-xs truncate">Motor · Carrocería · Multimarca · Santiago Centro</p>
+                    </div>
+                </a>
+
+                <div class="hidden xl:flex items-center gap-7 text-sm text-slate-300">
+                    <a href="#especialidades" class="hover:text-white transition-colors">Especialidades</a>
+                    <a href="#ventajas" class="hover:text-white transition-colors">Ventajas</a>
+                    <a href="#sucursales" class="hover:text-white transition-colors">Sucursales</a>
+                    <a href="#redes" class="hover:text-white transition-colors">Redes</a>
+                    <a href="#contacto" class="hover:text-white transition-colors">Contacto</a>
+                </div>
+
+                <div class="flex items-center gap-3 shrink-0">
+                    <a
+                        href="https://wa.me/56994417747?text=Hola%20Importadora%20Huoying,%20quiero%20cotizar%20un%20repuesto."
+                        target="_blank"
+                        class="hidden sm:inline-flex items-center gap-2 bg-green-500 hover:bg-green-400 text-slate-950 font-bold px-5 py-3 rounded-full transition-all shadow-green"
+                    >
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        Cotizar ahora
+                    </a>
+                    <a href="#sucursales" class="inline-flex items-center gap-2 border border-white/10 hover:border-white/20 bg-white/5 hover:bg-white/10 text-white font-semibold px-4 py-3 rounded-full transition-all">
+                        <i class="fa-solid fa-location-dot text-brand-secondary"></i>
+                        Ver sucursales
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header id="inicio" class="relative hero-fade min-h-screen pt-32 pb-20 bg-hero-overlay bg-cover bg-center">
+        <div class="absolute inset-0 bg-grid-pattern bg-[size:28px_28px] opacity-[0.12]"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-[1.12fr_.88fr] gap-10 items-center">
+                <div class="animate-on-scroll is-visible">
+                    <div class="inline-flex flex-wrap items-center gap-3 rounded-full border border-sky-400/20 bg-sky-400/10 px-4 py-2 text-sm text-brand-soft mb-6">
+                        <span class="inline-block w-2.5 h-2.5 rounded-full bg-brand-primary"></span>
+                        11 años en el mercado · 3 sucursales · Atención directa por WhatsApp
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-7xl font-black leading-tight text-white max-w-4xl">
+                        Repuestos de
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary via-cyan-300 to-sky-100">
+                            motor y carrocería
+                        </span>
+                        con atención rápida y respaldo real.
+                    </h1>
+
+                    <p class="mt-6 text-lg sm:text-xl text-slate-300 max-w-3xl leading-relaxed">
+                        En Importadora Huoying nos especializamos en repuestos automotrices de motor y carrocería. Trabajamos con 32 a 35 marcas diferentes, contamos con expertos multimarca, atención presencial en Santiago Centro y cobertura para todo Chile.
+                    </p>
+
+                    <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                        <a
+                            href="https://wa.me/56994417747?text=Hola%20Importadora%20Huoying,%20quiero%20cotizar%20un%20repuesto."
+                            target="_blank"
+                            class="inline-flex items-center justify-center gap-2 bg-brand-primary hover:bg-brand-secondary text-slate-950 font-extrabold px-7 py-4 rounded-2xl transition-all shadow-glow"
+                        >
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            Cotizar por WhatsApp
+                        </a>
+                        <a
+                            href="#ventajas"
+                            class="inline-flex items-center justify-center gap-2 glass text-white font-semibold px-7 py-4 rounded-2xl transition-all hover:bg-white/10"
+                        >
+                            <i class="fa-solid fa-circle-info"></i>
+                            Ver beneficios
+                        </a>
+                    </div>
+
+                    <div class="mt-10 grid sm:grid-cols-3 gap-4 max-w-4xl">
+                        <div class="glass rounded-2xl p-5">
+                            <p class="text-brand-primary text-sm font-semibold uppercase tracking-widest">Experiencia</p>
+                            <p class="mt-2 text-white font-bold text-xl">11 años</p>
+                            <p class="mt-1 text-slate-400 text-sm">Trayectoria real en el mercado de repuestos.</p>
+                        </div>
+                        <div class="glass rounded-2xl p-5">
+                            <p class="text-brand-primary text-sm font-semibold uppercase tracking-widest">Cobertura</p>
+                            <p class="mt-2 text-white font-bold text-xl">Todo Chile</p>
+                            <p class="mt-1 text-slate-400 text-sm">Envíos terrestres y aéreos, más transporte propio en Santiago.</p>
+                        </div>
+                        <div class="glass rounded-2xl p-5">
+                            <p class="text-brand-primary text-sm font-semibold uppercase tracking-widest">Importación</p>
+                            <p class="mt-2 text-white font-bold text-xl">15 a 20 días</p>
+                            <p class="mt-1 text-slate-400 text-sm">Importación directa desde China con llegada rápida.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="animate-on-scroll lg:pl-4">
+                    <div class="glass shine-border rounded-[28px] p-5 sm:p-6 shadow-soft">
+                        <div class="rounded-[24px] overflow-hidden border border-white/10 bg-slate-950/40">
+                            <div class="px-5 py-4 border-b border-white/10 flex items-center justify-between gap-4">
+                                <div class="flex items-center gap-3 min-w-0">
+                                    <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-brand-primary to-cyan-300 text-slate-950 grid place-items-center font-black shrink-0">HY</div>
+                                    <div class="min-w-0">
+                                        <p class="text-white font-bold truncate">Importadora Huoying</p>
+                                        <p class="text-slate-400 text-sm truncate">Especialistas en motor y carrocería</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs font-bold uppercase tracking-[0.18em] text-green-400 shrink-0">Activo</span>
+                            </div>
+
+                            <div class="p-5 sm:p-6 space-y-4">
+                                <div class="rounded-2xl bg-white/[0.04] border border-white/10 p-4">
+                                    <div class="flex items-start gap-3">
+                                        <div class="w-11 h-11 rounded-2xl bg-green-500/15 text-green-400 grid place-items-center shrink-0">
+                                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-white font-bold text-lg">Cotización rápida y precisa</p>
+                                            <p class="text-slate-400 text-sm mt-1">Envíanos patente, modelo, año, VIN o código OEM para agilizar tu consulta.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="grid sm:grid-cols-2 gap-4">
+                                    <div class="rounded-2xl bg-white/[0.04] border border-white/10 p-4">
+                                        <p class="text-slate-400 text-xs uppercase tracking-[0.18em]">Horario</p>
+                                        <p class="mt-2 text-white font-bold">Lunes a viernes</p>
+                                        <p class="text-slate-400 text-sm mt-1">09:30 AM a 18:00 PM</p>
+                                    </div>
+                                    <div class="rounded-2xl bg-white/[0.04] border border-white/10 p-4">
+                                        <p class="text-slate-400 text-xs uppercase tracking-[0.18em]">Sábado</p>
+                                        <p class="mt-2 text-white font-bold">Atención presencial</p>
+                                        <p class="text-slate-400 text-sm mt-1">10:30 AM a 14:00 PM</p>
+                                    </div>
+                                </div>
+
+                                <div class="rounded-2xl bg-gradient-to-r from-brand-primary/20 to-cyan-300/10 border border-sky-300/15 p-5">
+                                    <p class="text-white font-bold text-lg">Compra con más confianza</p>
+                                    <p class="text-slate-300 text-sm mt-2 leading-relaxed">
+                                        Todo repuesto viene con IVA incluido, aceptamos todo medio de pago y contamos con atención experta para ayudarte a cotizar con mayor seguridad.
+                                    </p>
+                                    <div class="mt-4 flex flex-wrap gap-2 text-xs text-slate-200">
+                                        <span class="px-3 py-2 rounded-full bg-white/10 border border-white/10">IVA incluido</span>
+                                        <span class="px-3 py-2 rounded-full bg-white/10 border border-white/10">Todo medio de pago</span>
+                                        <span class="px-3 py-2 rounded-full bg-white/10 border border-white/10">32 a 35 marcas</span>
+                                        <span class="px-3 py-2 rounded-full bg-white/10 border border-white/10">Importación directa</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative -mt-10 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="glass rounded-3xl p-6 animate-on-scroll shadow-soft">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-primary/15 text-brand-primary grid place-items-center mb-4 text-xl">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <h2 class="text-white text-xl font-bold">Despacho nacional</h2>
+                    <p class="text-slate-400 mt-2 leading-relaxed">Envíos a todo Chile por vía terrestre y aérea para responder más rápido a clientes de regiones.</p>
+                </div>
+                <div class="glass rounded-3xl p-6 animate-on-scroll shadow-soft" style="transition-delay: .08s;">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-primary/15 text-brand-primary grid place-items-center mb-4 text-xl">
+                        <i class="fa-solid fa-van-shuttle"></i>
+                    </div>
+                    <h2 class="text-white text-xl font-bold">Cobertura en Santiago</h2>
+                    <p class="text-slate-400 mt-2 leading-relaxed">Contamos con transporte personal para la Región de Santiago y una logística más directa.</p>
+                </div>
+                <div class="glass rounded-3xl p-6 animate-on-scroll shadow-soft" style="transition-delay: .16s;">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-primary/15 text-brand-primary grid place-items-center mb-4 text-xl">
+                        <i class="fa-solid fa-warehouse"></i>
+                    </div>
+                    <h2 class="text-white text-xl font-bold">3 sucursales activas</h2>
+                    <p class="text-slate-400 mt-2 leading-relaxed">Lira 997, San Isidro 747 y San Isidro 719 para reforzar presencia y confianza comercial.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="especialidades" class="py-24 section-grid">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center animate-on-scroll">
+                <span class="inline-flex items-center gap-2 text-brand-primary text-sm font-semibold uppercase tracking-[0.22em]">Especialidades Huoying</span>
+                <h2 class="mt-4 text-3xl md:text-5xl font-black text-white">Atención especializada para vender y resolver rápido</h2>
+                <p class="mt-4 text-slate-400 text-lg">Combinamos experiencia comercial, asesoría técnica y logística real para entregar una respuesta más clara al cliente desde el primer contacto.</p>
+            </div>
+
+            <div class="mt-14 grid md:grid-cols-2 xl:grid-cols-4 gap-5">
+                <article class="glass rounded-3xl p-6 animate-on-scroll">
+                    <div class="w-14 h-14 rounded-2xl bg-sky-400/10 text-brand-primary grid place-items-center text-xl mb-5">
+                        <i class="fa-solid fa-gears"></i>
+                    </div>
+                    <h3 class="text-white font-bold text-xl">Repuestos de motor</h3>
+                    <p class="text-slate-400 mt-3 leading-relaxed">Especialización en componentes clave para motor con soporte comercial y técnico.</p>
+                </article>
+                <article class="glass rounded-3xl p-6 animate-on-scroll" style="transition-delay: .08s;">
+                    <div class="w-14 h-14 rounded-2xl bg-sky-400/10 text-brand-primary grid place-items-center text-xl mb-5">
+                        <i class="fa-solid fa-car-side"></i>
+                    </div>
+                    <h3 class="text-white font-bold text-xl">Carrocería</h3>
+                    <p class="text-slate-400 mt-3 leading-relaxed">Soluciones para piezas de carrocería con atención pensada para talleres y clientes finales.</p>
+                </article>
+                <article class="glass rounded-3xl p-6 animate-on-scroll" style="transition-delay: .16s;">
+                    <div class="w-14 h-14 rounded-2xl bg-sky-400/10 text-brand-primary grid place-items-center text-xl mb-5">
+                        <i class="fa-solid fa-user-gear"></i>
+                    </div>
+                    <h3 class="text-white font-bold text-xl">Expertos multimarca</h3>
+                    <p class="text-slate-400 mt-3 leading-relaxed">Trabajamos 32 a 35 marcas diferentes y contamos con expertos en todo tipo de marcas.</p>
+                </article>
+                <article class="glass rounded-3xl p-6 animate-on-scroll" style="transition-delay: .24s;">
+                    <div class="w-14 h-14 rounded-2xl bg-sky-400/10 text-brand-primary grid place-items-center text-xl mb-5">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <h3 class="text-white font-bold text-xl">Importación directa</h3>
+                    <p class="text-slate-400 mt-3 leading-relaxed">Importación directa de China con llegada más rápida de 15 a 20 días.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="ventajas" class="py-24 bg-white/[0.02] border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-[.95fr_1.05fr] gap-12 items-center">
+                <div class="animate-on-scroll">
+                    <span class="text-brand-primary text-sm font-semibold uppercase tracking-[0.22em]">Por qué elegir Huoying</span>
+                    <h2 class="mt-4 text-3xl md:text-5xl font-black text-white leading-tight">Respaldo comercial, logística real y atención enfocada en resolver.</h2>
+                    <p class="mt-5 text-slate-400 text-lg leading-relaxed">
+                        Diseñamos esta landing para transmitir seriedad, claridad y confianza. Aquí el cliente ve rápido qué ofrecemos, cómo trabajamos y por qué conviene escribirnos de inmediato.
+                    </p>
+
+                    <div class="mt-8 space-y-4">
+                        <div class="flex gap-4">
+                            <div class="w-11 h-11 rounded-2xl bg-green-500/15 text-green-400 grid place-items-center shrink-0"><i class="fa-solid fa-circle-check"></i></div>
+                            <div>
+                                <h3 class="text-white font-bold">Todo medio de pago</h3>
+                                <p class="text-slate-400 text-sm mt-1">Facilitamos la compra con una experiencia más simple para cliente final, taller o empresa.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-11 h-11 rounded-2xl bg-green-500/15 text-green-400 grid place-items-center shrink-0"><i class="fa-solid fa-circle-check"></i></div>
+                            <div>
+                                <h3 class="text-white font-bold">IVA incluido en todos los repuestos</h3>
+                                <p class="text-slate-400 text-sm mt-1">Información más clara, menos fricción en la venta y mejor percepción de transparencia.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-11 h-11 rounded-2xl bg-green-500/15 text-green-400 grid place-items-center shrink-0"><i class="fa-solid fa-circle-check"></i></div>
+                            <div>
+                                <h3 class="text-white font-bold">Atención presencial y digital</h3>
+                                <p class="text-slate-400 text-sm mt-1">Tres sucursales en Santiago Centro y canales directos por WhatsApp para cotizar más rápido.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid sm:grid-cols-2 gap-5 animate-on-scroll">
+                    <div class="glass rounded-3xl p-6 shadow-soft">
+                        <p class="text-brand-primary text-sm font-semibold uppercase tracking-[0.18em]">Cobertura</p>
+                        <h3 class="mt-3 text-white text-2xl font-black">Todo Chile</h3>
+                        <p class="mt-3 text-slate-400 leading-relaxed">Despachamos por vía terrestre y aérea para que el cliente compre desde cualquier región.</p>
+                    </div>
+                    <div class="glass rounded-3xl p-6 shadow-soft sm:translate-y-8">
+                        <p class="text-brand-primary text-sm font-semibold uppercase tracking-[0.18em]">Santiago</p>
+                        <h3 class="mt-3 text-white text-2xl font-black">Transporte personal</h3>
+                        <p class="mt-3 text-slate-400 leading-relaxed">Logística propia para la Región de Santiago con una operación más cercana y flexible.</p>
+                    </div>
+                    <div class="glass rounded-3xl p-6 shadow-soft">
+                        <p class="text-brand-primary text-sm font-semibold uppercase tracking-[0.18em]">Soporte</p>
+                        <h3 class="mt-3 text-white text-2xl font-black">Expertos en marcas</h3>
+                        <p class="mt-3 text-slate-400 leading-relaxed">Atendemos distintas líneas y modelos con un equipo preparado para orientar mejor la compra.</p>
+                    </div>
+                    <div class="glass rounded-3xl p-6 shadow-soft sm:translate-y-8">
+                        <p class="text-brand-primary text-sm font-semibold uppercase tracking-[0.18em]">Abastecimiento</p>
+                        <h3 class="mt-3 text-white text-2xl font-black">China directo</h3>
+                        <p class="mt-3 text-slate-400 leading-relaxed">Importación directa con tiempos estimados de 15 a 20 días para resolver pedidos específicos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center animate-on-scroll">
+                <span class="text-brand-primary text-sm font-semibold uppercase tracking-[0.22em]">Contacto directo</span>
+                <h2 class="mt-4 text-3xl md:text-5xl font-black text-white">Habla con Huoying por el canal que prefieras</h2>
+                <p class="mt-4 text-slate-400 text-lg">Cotiza por WhatsApp, consulta compatibilidades y recibe atención rápida con más contexto y precisión.</p>
+            </div>
+
+            <div class="mt-14 grid lg:grid-cols-2 gap-6">
+                <a
+                    href="https://wa.me/56994417747?text=Hola%20Importadora%20Huoying,%20quiero%20cotizar%20un%20repuesto."
+                    target="_blank"
+                    class="group relative overflow-hidden rounded-[30px] bg-gradient-to-br from-green-500/12 to-emerald-500/6 border border-green-400/15 p-8 shadow-soft transition-all hover:-translate-y-1"
+                >
+                    <div class="absolute -right-16 -top-16 w-40 h-40 rounded-full bg-green-400/10 blur-3xl"></div>
+                    <div class="relative">
+                        <div class="w-16 h-16 rounded-3xl bg-green-500 text-slate-950 grid place-items-center text-2xl shadow-green">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                        <h3 class="mt-6 text-white text-3xl font-black">Cotizar ahora</h3>
+                        <p class="mt-3 text-slate-300 text-lg leading-relaxed">
+                            Para ventas generales, disponibilidad, precios y consulta de repuestos de motor o carrocería.
+                        </p>
+                        <div class="mt-6 flex flex-wrap gap-2 text-sm">
+                            <span class="px-3 py-2 rounded-full border border-white/10 bg-white/5">Respuesta rápida</span>
+                            <span class="px-3 py-2 rounded-full border border-white/10 bg-white/5">Multimarca</span>
+                            <span class="px-3 py-2 rounded-full border border-white/10 bg-white/5">Atención directa</span>
+                        </div>
+                        <div class="mt-8 inline-flex items-center gap-2 text-green-400 font-bold text-lg">
+                            Abrir WhatsApp
+                            <i class="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <a
+                    href="https://wa.me/56939294411?text=Hola%20Importadora%20Huoying,%20necesito%20asesor%C3%ADa%20t%C3%A9cnica%20para%20un%20repuesto."
+                    target="_blank"
+                    class="group relative overflow-hidden rounded-[30px] bg-gradient-to-br from-sky-400/12 to-cyan-300/6 border border-sky-300/15 p-8 shadow-soft transition-all hover:-translate-y-1"
+                >
+                    <div class="absolute -right-16 -top-16 w-40 h-40 rounded-full bg-sky-400/10 blur-3xl"></div>
+                    <div class="relative">
+                        <div class="w-16 h-16 rounded-3xl bg-brand-primary text-slate-950 grid place-items-center text-2xl shadow-glow">
+                            <i class="fa-solid fa-user-gear"></i>
+                        </div>
+                        <h3 class="mt-6 text-white text-3xl font-black">Hablar con experto</h3>
+                        <p class="mt-3 text-slate-300 text-lg leading-relaxed">
+                            Para compatibilidades, dudas técnicas, importaciones o consultas más específicas.
+                        </p>
+                        <div class="mt-6 flex flex-wrap gap-2 text-sm">
+                            <span class="px-3 py-2 rounded-full border border-white/10 bg-white/5">Soporte técnico</span>
+                            <span class="px-3 py-2 rounded-full border border-white/10 bg-white/5">Más precisión</span>
+                            <span class="px-3 py-2 rounded-full border border-white/10 bg-white/5">Atención especializada</span>
+                        </div>
+                        <div class="mt-8 inline-flex items-center gap-2 text-brand-primary font-bold text-lg">
+                            Consultar técnico
+                            <i class="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="mt-8 glass rounded-[28px] p-6 animate-on-scroll">
+                <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                    <div>
+                        <p class="text-white font-bold text-xl">Para agilizar tu cotización</p>
+                        <p class="text-slate-400 mt-2">Envíanos patente, marca, modelo, año, VIN o código OEM para responderte con mayor precisión.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 text-sm text-slate-200">
+                        <span class="px-3 py-2 rounded-full bg-white/5 border border-white/10">Patente</span>
+                        <span class="px-3 py-2 rounded-full bg-white/5 border border-white/10">Marca</span>
+                        <span class="px-3 py-2 rounded-full bg-white/5 border border-white/10">Modelo</span>
+                        <span class="px-3 py-2 rounded-full bg-white/5 border border-white/10">Año</span>
+                        <span class="px-3 py-2 rounded-full bg-white/5 border border-white/10">VIN</span>
+                        <span class="px-3 py-2 rounded-full bg-white/5 border border-white/10">Código OEM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sucursales" class="py-24 bg-white/[0.02] border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center animate-on-scroll">
+                <span class="text-brand-primary text-sm font-semibold uppercase tracking-[0.22em]">Sucursales y horarios</span>
+                <h2 class="mt-4 text-3xl md:text-5xl font-black text-white">Presencia real en Santiago Centro</h2>
+                <p class="mt-4 text-slate-400 text-lg">Tres direcciones activas para fortalecer confianza comercial, atención presencial y operación diaria.</p>
+            </div>
+
+            <div class="mt-14 grid xl:grid-cols-[1fr_1fr_1fr_.9fr] gap-6">
+                <article class="glass rounded-[30px] p-7 animate-on-scroll shadow-soft">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-primary/15 text-brand-primary grid place-items-center text-xl mb-5">
+                        <i class="fa-solid fa-store"></i>
+                    </div>
+                    <p class="text-slate-400 text-sm uppercase tracking-[0.18em]">Sucursal 1</p>
+                    <h3 class="mt-3 text-white text-2xl font-black">Lira 997</h3>
+                    <p class="mt-2 text-slate-300">Santiago Centro</p>
+                    <p class="mt-4 text-slate-400 leading-relaxed">Punto de atención y operación comercial dentro del sector repuestero de Santiago Centro.</p>
+                    <a href="https://waze.com/ul?q=Lira%20997%20Santiago" target="_blank" class="mt-6 inline-flex items-center gap-2 text-brand-primary font-bold hover:text-cyan-300 transition-colors">
+                        Abrir en Waze
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </article>
+
+                <article class="glass rounded-[30px] p-7 animate-on-scroll shadow-soft" style="transition-delay: .08s;">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-primary/15 text-brand-primary grid place-items-center text-xl mb-5">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <p class="text-slate-400 text-sm uppercase tracking-[0.18em]">Sucursal 2</p>
+                    <h3 class="mt-3 text-white text-2xl font-black">San Isidro 747</h3>
+                    <p class="mt-2 text-slate-300">Santiago Centro</p>
+                    <p class="mt-4 text-slate-400 leading-relaxed">Dirección complementaria para reforzar cobertura, cercanía y confianza en atención presencial.</p>
+                    <a href="https://waze.com/ul?q=San%20Isidro%20747%20Santiago" target="_blank" class="mt-6 inline-flex items-center gap-2 text-brand-primary font-bold hover:text-cyan-300 transition-colors">
+                        Abrir en Waze
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </article>
+
+                <article class="glass rounded-[30px] p-7 animate-on-scroll shadow-soft border border-sky-300/20" style="transition-delay: .16s;">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-primary text-slate-950 grid place-items-center text-xl mb-5 shadow-glow">
+                        <i class="fa-solid fa-warehouse"></i>
+                    </div>
+                    <p class="text-brand-primary text-sm uppercase tracking-[0.18em]">Sucursal 3</p>
+                    <h3 class="mt-3 text-white text-2xl font-black">San Isidro 719</h3>
+                    <p class="mt-2 text-slate-300">Santiago Centro</p>
+                    <p class="mt-4 text-slate-400 leading-relaxed">Nueva dirección integrada con alta visibilidad para apoyar la presencia comercial de la marca.</p>
+                    <a href="https://waze.com/ul?q=San%20Isidro%20719%20Santiago" target="_blank" class="mt-6 inline-flex items-center gap-2 text-brand-primary font-bold hover:text-cyan-300 transition-colors">
+                        Abrir en Waze
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </article>
+
+                <article class="rounded-[30px] bg-gradient-to-br from-brand-primary to-sky-300 text-slate-950 p-7 animate-on-scroll shadow-glow" style="transition-delay: .24s;">
+                    <p class="text-sm font-bold uppercase tracking-[0.18em] opacity-80">Horario de atención</p>
+                    <h3 class="mt-4 text-3xl font-black">Presencial y ventas</h3>
+                    <div class="mt-8 space-y-4">
+                        <div class="flex items-center justify-between gap-3 border-b border-slate-950/10 pb-3">
+                            <span class="font-medium">Lunes a viernes</span>
+                            <span class="font-black">09:30 AM - 18:00 PM</span>
+                        </div>
+                        <div class="flex items-center justify-between gap-3 border-b border-slate-950/10 pb-3">
+                            <span class="font-medium">Sábado</span>
+                            <span class="font-black">10:30 AM - 14:00 PM</span>
+                        </div>
+                        <div class="flex items-center justify-between gap-3">
+                            <span class="font-medium">Cobertura</span>
+                            <span class="font-black">Todo Chile</span>
+                        </div>
+                    </div>
+                    <p class="mt-8 text-sm font-medium text-slate-950/75">Horarios y direcciones visibles para dar más seguridad al cliente antes de escribir.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="redes" class="py-24">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-[34px] overflow-hidden border border-white/10 bg-gradient-to-br from-white/[0.08] to-white/[0.03] shadow-soft animate-on-scroll">
+                <div class="grid lg:grid-cols-[1.05fr_.95fr] gap-8 p-8 sm:p-10 lg:p-12 items-center">
+                    <div>
+                        <span class="text-brand-primary text-sm font-semibold uppercase tracking-[0.22em]">Redes sociales</span>
+                        <h2 class="mt-4 text-3xl md:text-5xl font-black text-white leading-tight">Conecta con Huoying en nuestras plataformas</h2>
+                        <p class="mt-5 text-slate-400 text-lg leading-relaxed">
+                            Refuerza presencia digital, genera confianza y mantén un canal abierto con clientes que llegan desde redes sociales, recomendaciones y contenido.
+                        </p>
+                    </div>
+                    <div class="grid sm:grid-cols-3 gap-4">
+                        <a href="https://www.facebook.com/profile.php?id=61587777974168" target="_blank" class="glass rounded-3xl p-6 hover:bg-white/10 transition-all shadow-soft text-center">
+                            <div class="w-14 h-14 rounded-2xl bg-blue-500/15 text-blue-400 grid place-items-center text-2xl mx-auto">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </div>
+                            <p class="mt-4 text-white font-bold text-xl">Facebook</p>
+                            <p class="mt-2 text-slate-400 text-sm">Perfil comercial y presencia de marca.</p>
+                        </a>
+                        <a href="https://www.instagram.com/huoyingrepuestos?igsh=MTlkeWtvMnoyMGQwcw==" target="_blank" class="glass rounded-3xl p-6 hover:bg-white/10 transition-all shadow-soft text-center">
+                            <div class="w-14 h-14 rounded-2xl bg-pink-500/15 text-pink-400 grid place-items-center text-2xl mx-auto">
+                                <i class="fa-brands fa-instagram"></i>
+                            </div>
+                            <p class="mt-4 text-white font-bold text-xl">Instagram</p>
+                            <p class="mt-2 text-slate-400 text-sm">Contenido visual, productos y marca.</p>
+                        </a>
+                        <a href="https://www.tiktok.com/@huoying_repuestos?_r=1&_t=ZS-94nLrUFvLyD" target="_blank" class="glass rounded-3xl p-6 hover:bg-white/10 transition-all shadow-soft text-center">
+                            <div class="w-14 h-14 rounded-2xl bg-white/10 text-white grid place-items-center text-2xl mx-auto">
+                                <i class="fa-brands fa-tiktok"></i>
+                            </div>
+                            <p class="mt-4 text-white font-bold text-xl">TikTok</p>
+                            <p class="mt-2 text-slate-400 text-sm">Videos, alcance y visibilidad comercial.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-white/5 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-[1fr_auto] gap-8 items-center">
+                <div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-brand-primary to-cyan-300 text-slate-950 font-black grid place-items-center">HY</div>
+                        <div>
+                            <p class="text-white font-bold">Importadora Huoying</p>
+                            <p class="text-slate-400 text-sm">Repuestos de motor y carrocería · Santiago Centro</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm text-slate-400">
+                        <span>Lira 997</span>
+                        <span>San Isidro 747</span>
+                        <span>San Isidro 719</span>
+                        <span>11 años en el mercado</span>
+                        <span>Envíos a todo Chile</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap gap-3 lg:justify-end">
+                    <a href="https://www.facebook.com/profile.php?id=61587777974168" target="_blank" class="w-11 h-11 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 grid place-items-center text-slate-300 hover:text-white transition-all" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/huoyingrepuestos?igsh=MTlkeWtvMnoyMGQwcw==" target="_blank" class="w-11 h-11 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 grid place-items-center text-slate-300 hover:text-white transition-all" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@huoying_repuestos?_r=1&_t=ZS-94nLrUFvLyD" target="_blank" class="w-11 h-11 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 grid place-items-center text-slate-300 hover:text-white transition-all" aria-label="TikTok">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                    <a href="https://wa.me/56994417747?text=Hola%20Importadora%20Huoying,%20quiero%20cotizar%20un%20repuesto." target="_blank" class="inline-flex items-center gap-2 bg-green-500 hover:bg-green-400 text-slate-950 font-bold px-4 py-3 rounded-2xl transition-all shadow-green">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        WhatsApp
+                    </a>
+                </div>
+            </div>
+            <div class="mt-8 pt-6 border-t border-white/5 text-slate-500 text-sm flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+                <p>© 2026 Importadora Huoying. Todos los derechos reservados.</p>
+                <p>Horario: lunes a viernes 09:30 AM a 18:00 PM · sábado 10:30 AM a 14:00 PM.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a
+        href="https://wa.me/56994417747?text=Hola%20Importadora%20Huoying,%20quiero%20cotizar%20un%20repuesto."
+        target="_blank"
+        aria-label="Abrir WhatsApp"
+        class="floating-whatsapp fixed bottom-5 right-5 z-50 w-16 h-16 rounded-full bg-green-500 hover:bg-green-400 text-slate-950 grid place-items-center text-3xl shadow-green transition-all"
+    >
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries, currentObserver) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        currentObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.12,
+                rootMargin: '0px 0px -40px 0px'
+            });
+
+            document.querySelectorAll('.animate-on-scroll').forEach((element) => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>
